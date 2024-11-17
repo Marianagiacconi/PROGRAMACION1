@@ -1,0 +1,36 @@
+<div class="update-poem-container">
+  <h2>Editar Poema</h2>
+
+  <div class="card">
+    <form [formGroup]="poemForm" (ngSubmit)="updatePoem()">
+      <div class="form-group">
+        <label for="title">Título del Poema</label>
+        <input type="text" id="title" formControlName="title" class="form-control" placeholder="Ingresa el título">
+        <div *ngIf="poemForm.get('title')?.invalid && poemForm.get('title')?.touched" class="error">
+          El título es obligatorio.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Contenido</label>
+        <textarea id="content" formControlName="content" rows="6" class="form-control" placeholder="Escribe el contenido del poema..."></textarea>
+        <div *ngIf="poemForm.get('content')?.invalid && poemForm.get('content')?.touched" class="error">
+          El contenido es obligatorio.
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" [disabled]="!poemForm.valid || !canUpload" class="btn btn-primary">
+          Guardar Cambios
+        </button>
+        <button type="button" (click)="onCancel()" class="btn btn-secondary">
+          Cancelar
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="!canUpload" class="alert alert-warning">
+      No puedes subir un nuevo poema hasta que califiques al menos 5 poemas.
+    </div>
+  </div>
+</div>

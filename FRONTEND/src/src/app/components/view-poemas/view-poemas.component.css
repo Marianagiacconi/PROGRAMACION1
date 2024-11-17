@@ -1,0 +1,23 @@
+.ir{
+    border: 1px solid rgb(0, 0, 0);
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 80px;
+    width:80px;
+    height:25px;
+    text-align: center;
+    }
+
+
+.clasificacion{
+    align-self: start;
+    unicode-bidi: bidi-override;/* bidi de bidireccional */
+    height: 100px;
+    text-justify:auto;
+    }
+    
+.btn-group{
+    display: inline-block;
+    }

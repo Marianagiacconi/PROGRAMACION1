@@ -1,0 +1,84 @@
+<div class="abm-usuario-container">
+  <h2>Gestión de Usuarios</h2>
+
+  <!-- Formulario para crear o editar usuario -->
+  <div class="user-form">
+    <h3>{{ isEditing ? 'Editar Usuario' : 'Crear Usuario' }}</h3>
+    <form [formGroup]="userForm" (ngSubmit)="isEditing ? updateUser() : createUser()">
+      <div class="form-group">
+        <label for="firstname">Nombre</label>
+        <input
+          id="firstname"
+          formControlName="firstname"
+          type="text"
+          class="form-control"
+          placeholder="Nombre del usuario"
+        />
+        <div *ngIf="userForm.get('firstname')?.invalid && userForm.get('firstname')?.touched" class="error">
+          El nombre es obligatorio.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          class="form-control"
+          placeholder="Correo electrónico"
+        />
+        <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="error">
+          Debes ingresar un correo electrónico válido.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="admin">Administrador</label>
+        <input
+          id="admin"
+          type="checkbox"
+          formControlName="admin"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        {{ isEditing ? 'Actualizar Usuario' : 'Crear Usuario' }}
+      </button>
+      <button type="button" (click)="cancelEdit()" class="btn btn-secondary" *ngIf="isEditing">
+        Cancelar
+      </button>
+    </form>
+  </div>
+
+  <!-- Lista de usuarios -->
+  <div class="user-list">
+    <h3>Lista de Usuarios</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo Electrónico</th>
+          <th>Administrador</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.firstname }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.admin ? 'Sí' : 'No' }}</td>
+          <td>
+            <button (click)="selectUser(user)" class="btn btn-info btn-sm">Editar</button>
+            <button (click)="deleteUser(user.id)" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

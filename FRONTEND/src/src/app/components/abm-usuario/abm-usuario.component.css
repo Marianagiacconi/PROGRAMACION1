@@ -1,0 +1,25 @@
+.abm-usuario-container {
+    padding: 20px;
+  }
+  
+  .user-form, .user-list {
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  .table {
+    width: 100%;
+  }
+  
+  .btn {
+    margin-right: 5px;
+  }
+  

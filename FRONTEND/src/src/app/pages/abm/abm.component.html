@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    <h5 *ngIf="tipoOperacion == '1'">Editar Usuario</h5>
+    <h5 *ngIf="tipoOperacion == '2'">Eliminar Usuario</h5>
+    <h5 *ngIf="tipoOperacion == '3'">Ver Usuario</h5>
+    <h5 *ngIf="tipoOperacion == '4'">Alta de Usuario</h5>
+  </div>
+  <div class="card-body">
+    <div *ngIf="tipoOperacion == '3' || tipoOperacion == '1'">
+      <p>Email: {{ user.email }}</p>
+      <p>Admin: {{ user.admin ? 'Sí' : 'No' }}</p>
+    </div>
+    <div *ngIf="tipoOperacion == '4'">
+      <label>Email: <input [(ngModel)]="user.email" /></label>
+      <label>Password: <input type="password" [(ngModel)]="user.password" /></label>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button *ngIf="tipoOperacion == '1'" (click)="editar()">Cambiar Permisos</button>
+    <button *ngIf="tipoOperacion == '2'" (click)="eliminar()">Eliminar</button>
+    <button *ngIf="tipoOperacion == '4'" (click)="alta()">Crear</button>
+    <button (click)="router.navigate(['/usuarios'])">Volver</button>
+  </div>
+</div>

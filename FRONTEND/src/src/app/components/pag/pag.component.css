@@ -1,0 +1,64 @@
+.pen-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    margin: 10px auto 100px;
+    
+  }
+  .pen-footer a {
+    color: #FFFFFF;
+    font-size: 12px;
+    text-decoration: none;
+    text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  .pen-footer a .material-icons {
+    width: 12px;
+    margin: 0 5px;
+    vertical-align: middle;
+    font-size: 12px;
+    
+  }
+  
+  .cp-fab {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  #footer {
+  margin:20px 0;
+  align-self: flex-end;
+  
+  }
+  .paginacion {
+  margin-bottom:5px 0;
+  align-items: flex-end;
+  }
+  
+  .paginacion ul {
+  list-style:none;
+  width: 100%;
+  height: 10%;
+    
+  }
+  
+  .paginacion ul li {
+  display:inline-block;
+  margin-right:10px;
+  }
+  
+  .paginacion ul li a {
+  display:block;
+  padding:10px 20px;
+  color:#fff;
+  background:#000000;
+  text-decoration: none;
+  }
+  
+  .paginacion ul li a:hover {
+  background:#1d1e1f;
+  }
+  
+  .paginacion ul li .active {
+  background:#262727;
+  font-weight:bold;
+  }

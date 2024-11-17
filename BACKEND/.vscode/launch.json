@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Flask",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "app.py",  // Nombre del archivo principal de tu aplicación Flask
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "1"
+            },
+            "args": [
+                "run",
+                "--no-debugger",  // Opcional: para desactivar el depurador nativo de Flask
+                "--no-reload"     // Opcional: para evitar la recarga automática de Flask
+            ],
+            "jinja": true
+        }
+    ]
+}

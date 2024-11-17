@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="form">
+  <div class="form-toggle"></div>
+  <div class="form-panel one">
+    <div class="form-header">
+      <button routerLink="" style="border: none; background: transparent">
+        <span class="material-symbols-outlined"> arrow_back </span>
+      </button>
+      <h1>Registrate</h1>
+    </div>
+    <div class="form-content">
+      <form [formGroup]="registerForm">
+        <div class="form-group">
+          <label for="username">Escribe tu nombre</label>
+          <input
+            formControlName="firstname"
+            id="username"
+            type="text"
+            name="username"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="mail">Escribe tu mail</label>
+          <input
+            formControlName="email"
+            id="mail"
+            type="mail"
+            name="mail"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contraseña">Escribe tu contraseña</label>
+          <input
+            formControlName="password"
+            id="contraseña"
+            type="password"
+            name="contraseña"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contraseña">Repite tu contraseña</label>
+          <input
+            formControlName="repeatpassword"
+            id="repeatcontraseña"
+            type="password"
+            name="repeatcontraseña"
+            required="required"
+          />
+        </div>
+
+        <div class="form-group">
+          <button type="submit" (click)="submit()">Registrarme</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<header>
+            
+    <div class="navbar navbar-black bg-black shadow-sm">
+        <div class="container">
+                
+                <a href="/" class="btn btn-dark">Home</a> 
+                <a *ngIf="isToken" href="update-poem" class="btn btn-dark">Subir poemas</a> 
+               
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+                
+
+                <div class="respmenu">
+                    
+                    <span class="material-icons">
+                        
+                    </span>
+                    
+                    <input type="checkbox">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                    <nav>
+                      <ul>
+                        <li *ngIf="!isToken"><a href="/registro">Registro</a></li>
+                        <li *ngIf="!isToken"><a href="/login">Iniciar sesion</a></li>
+                        <li *ngIf="isToken"><a href="usuarios">ABM usuarios</a></li>
+                        <li *ngIf="isToken"><a (click)="cerrarSesion()">Cerrar sesion</a></li>
+                        
+                      </ul>
+                    </nav>
+                </div>
+                
+                
+            
+        </div>
+    </div>
+
+</header>

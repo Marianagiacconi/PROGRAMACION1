@@ -1,0 +1,51 @@
+.con{
+    background-color: rgb(250, 244, 244);
+    width: 100%;
+    height: 21%;
+   
+    text-align: center;
+    background-image: url("/images/thumb2-white-vintage-background-vintage-floral-pattern-gray-damask-pattern-floral-patterns-vintage-backgrounds.png");
+}
+h1{
+    font-family: 'Charm';
+    font-size: 48px;
+    font-style: normal;
+    margin-left: 20px;
+    
+}
+h5{
+    font-size: 16px;
+    font-style: normal;
+    font-family: 'Inter';
+    margin-left: 30px;
+}
+
+
+.btn-group{
+    
+    float: right;
+   
+}
+.col{
+
+    margin: 30px;
+    
+}
+.buttonIniciasesion{
+    color: white;
+    background-color: #000;
+    height: 30px;
+    width: 160px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.buttonregister{
+    color: white;
+    background-color: #000;
+    height: 30px;
+    width: 120px;
+    align-self: right;
+    border-radius: 10px;
+    text-decoration: none;
+
+}
